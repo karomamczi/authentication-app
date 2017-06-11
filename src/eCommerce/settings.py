@@ -26,13 +26,21 @@ EMAIL_USE_TLS = True
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!usa+&_9s3+o+rjtbbvq9$z0$mq5sy-n5ibjbuu6kcu6k4=3_w'
+# My comment: Secured.
+with open(os.path.join(os.path.dirname(__file__),'SECRET_KEY.txt')) as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# My comment: Still needs to be secured.
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# My comment: Secured.
+CSRF_COOKIE_SECURE = True
+
+# My comment: Secured.
+SESSION_COOKIE_SECURE = True
 
 # Application definition
 
